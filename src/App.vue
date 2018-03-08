@@ -1,8 +1,9 @@
 <template>
   <div id="app">
+    <h1>Hello</h1>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link ref="tableLink" to="table">Table</router-link> |
+      <router-link ref="formLink" :to="{ name: 'form', params: { id: 12} }">Form</router-link>
     </div>
     <router-view/>
   </div>

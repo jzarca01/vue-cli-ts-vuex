@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "properties": {
+      "version": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 10,
+        "exclusiveMinimum": true
+      },
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 5,
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": true
+            },
+            "name": {
+              "type": "string"
+            },
+            "Date": {
+              "type": "date"
+            },
+            "Title": {
+              "type": "string"
+            },
+            "Description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "Date",
+            "title",
+            "Description"
+          ]
+        }
+      }
+    },
+    "required": ["version","items"]
+  }

@@ -1,5 +1,5 @@
 {
-  "name": "testVueCliTS",
+  "name": "test-vue-cli-ts",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,11 +10,15 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "path": "^0.12.7",
     "vue": "^2.5.13",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^6.0.0",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.4.2",
+    "vuex-type-helper": "git@github.com:jzarca01/vuex-type-helper.git"
   },
   "devDependencies": {
     "@types/chai": "^4.1.0",
@@ -25,7 +29,10 @@
     "@vue/cli-plugin-unit-mocha": "^3.0.0-beta.6",
     "@vue/cli-service": "^3.0.0-beta.6",
     "@vue/test-utils": "^1.0.0-beta.10",
+    "axios-mock-adapter": "^1.14.1",
     "chai": "^4.1.2",
+    "faker": "^4.1.0",
+    "json-schema-faker": "^0.5.0-rc13",
     "vue-template-compiler": "^2.5.13"
   },
   "browserslist": [
