@@ -1,22 +1,23 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import createPersistedState from 'vuex-persistedstate'
-import checkMetadataValidity from './plugins/checkMetadataValidity.plugin'
+import Vue from 'vue';
+import Vuex, { StoreOptions} from 'vuex';
+import { RootState } from './types.d';
+import createPersistedState from 'vuex-persistedstate';
+import checkMetadataValidity from './plugins/checkMetadataValidity.plugin';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-import tableReducer from './modules/table'
+import { table } from './modules/table/';
 
-const store = new Vuex.Store({
+const store: StoreOptions<RootState> = {
   modules: {
-    table: tableReducer
+    table,
   },
   plugins: [
     createPersistedState({
-      paths: ['table.version', 'table.columns']
+      paths: ['table.version', 'table.columns'],
     }),
-    checkMetadataValidity
-  ]
-})
+    checkMetadataValidity,
+  ],
+};
 
-export default store
+export default new Vuex.Store<RootState>(store);

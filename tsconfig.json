@@ -8,6 +8,7 @@
       "dom"
     ],
     "strict": true,
+    "strictPropertyInitialization": false,
     "jsx": "preserve",
     "moduleResolution": "node",
     "experimentalDecorators": true,

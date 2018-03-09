@@ -8,8 +8,17 @@ module.exports = {
         src: path.resolve(__dirname, './src'),
         assets: path.resolve(__dirname, './src/assets'),
         'Components': path.resolve(__dirname, './src/components'),
-        'Views': path.resolve(__dirname, './src/views')
+        'Views': path.resolve(__dirname, './src/views'),
+        'Store': path.resolve(__dirname, './src/store')
       }
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.json$/,
+          loader: 'json-loader'
+        }
+      ]
     }
   }
 }

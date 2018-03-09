@@ -11,14 +11,15 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "element-ui": "^2.2.1",
     "path": "^0.12.7",
     "vue": "^2.5.13",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^6.0.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
-    "vuex-persistedstate": "^2.4.2",
-    "vuex-type-helper": "git@github.com:jzarca01/vuex-type-helper.git"
+    "vuex-class": "^0.3.0",
+    "vuex-persistedstate": "^2.4.2"
   },
   "devDependencies": {
     "@types/chai": "^4.1.0",
@@ -32,6 +33,7 @@
     "axios-mock-adapter": "^1.14.1",
     "chai": "^4.1.2",
     "faker": "^4.1.0",
+    "json-loader": "^0.5.7",
     "json-schema-faker": "^0.5.0-rc13",
     "vue-template-compiler": "^2.5.13"
   },

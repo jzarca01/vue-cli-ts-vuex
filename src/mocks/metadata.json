@@ -19,25 +19,25 @@
               "minimum": 0,
               "exclusiveMinimum": true
             },
-            "name": {
-              "type": "string"
+            "userId": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMinimum": true
             },
-            "Date": {
-              "type": "date"
+            "title": {
+              "type": "string",
+              "faker": "company.catchPhrase"
             },
-            "Title": {
-              "type": "string"
-            },
-            "Description": {
-              "type": "string"
+            "body": {
+              "type": "string",
+              "faker": "lorem.sentence"
             }
           },
           "required": [
             "id",
-            "name",
-            "Date",
+            "userId",
             "title",
-            "Description"
+            "body"
           ]
         }
       }

@@ -18,7 +18,7 @@ declare namespace json_schema_faker {
 
     function option(nameOrOptionMap: any): any;
 
-    function resolve(schema: any, refs: any, cwd: any): any;
+    function resolve(schema: any, refs?: any, cwd?: any): any;
 
     namespace define {
         const prototype: {
