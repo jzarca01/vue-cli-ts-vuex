@@ -11,14 +11,6 @@ module.exports = {
         'Views': path.resolve(__dirname, './src/views'),
         'Store': path.resolve(__dirname, './src/store')
       }
-    },
-    module: {
-      loaders: [
-        {
-          test: /\.json$/,
-          loader: 'json-loader'
-        }
-      ]
     }
   }
 }

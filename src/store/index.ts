@@ -8,7 +8,7 @@ Vue.use(Vuex);
 
 import { table } from './modules/table/';
 
-const store: StoreOptions<RootState> = {
+const rootStore: StoreOptions<RootState> = {
   modules: {
     table,
   },
@@ -20,4 +20,6 @@ const store: StoreOptions<RootState> = {
   ],
 };
 
-export default new Vuex.Store<RootState>(store);
+const store = new Vuex.Store<RootState>(rootStore);
+
+export default store;

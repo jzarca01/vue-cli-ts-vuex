@@ -1,4 +1,4 @@
-export const transformMetadata = (metadata: any) => {
+export const transformMetadata = (metadata: any): any[] => {
     const result: any[] = [];
     const keys: string[] = Object.keys(metadata);
     const values: any[] = Object.values(metadata);

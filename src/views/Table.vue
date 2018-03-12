@@ -22,18 +22,17 @@ const namespace: string = 'table';
 })
 export default class Table extends Vue {
     @State('table') public state: TableState;
-
-    @Action('fetchData', { namespace}) public getData: any;
-    @Action('fetchMetaData', { namespace}) public getMetaData: any;
-
     @Getter('getState', { namespace }) public getState: TableState;
+
+    @Action('fetchData', { namespace }) public fetchData: any;
+    @Action('fetchMetadata', { namespace }) public fetchMetadata: any;
 
     public async mounted() {
         if (!this.state.version) {
-            this.getMetaData()
-            .then(async () => await this.getData());
+            this.fetchMetadata()
+            .then(async () => await this.fetchData());
         } else {
-            await this.getData();
+            await this.fetchData();
         }
     }
 }

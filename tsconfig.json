@@ -30,6 +30,9 @@
       ],
       "json-schema-faker": [
         "types-local/json-schema-faker"
+      ],
+      "giphy-api": [
+        "types-local/giphy-api"
       ]
     }
   },

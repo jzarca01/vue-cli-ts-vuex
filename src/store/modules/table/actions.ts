@@ -6,7 +6,7 @@ import { fetchItems, fetchMetadata } from 'src/common/requests';
 import { transformMetadata } from './utils';
 
 export const actions: ActionTree<TableState, RootState> = {
-    async fetchMetadata({ commit }) {
+    async fetchMetadata({ commit }): Promise<any> {
       try {
         await commit('toggleLoading', { isLoading: true });
         const response = await fetchMetadata('somerandomurl');
@@ -21,7 +21,7 @@ export const actions: ActionTree<TableState, RootState> = {
         console.error('err fetchmetadata', err);
       }
     },
-    async fetchData({ commit }) {
+    async fetchData({ commit }): Promise<any> {
       try {
         await commit('toggleLoading', { isLoading: true });
         // const response: any = await fetchItems('/enablon.8.7.Ref/odata/data/ho_Test/ho_Test')
