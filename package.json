@@ -25,6 +25,8 @@
   "devDependencies": {
     "@types/chai": "^4.1.0",
     "@types/mocha": "^2.2.46",
+    "@types/sinon": "^4.3.0",
+    "@types/sinon-chai": "^2.7.29",
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
     "@vue/cli-plugin-e2e-nightwatch": "^3.0.0-beta.6",
     "@vue/cli-plugin-typescript": "^3.0.0-beta.6",
@@ -36,6 +38,8 @@
     "faker": "^4.1.0",
     "json-loader": "^0.5.7",
     "json-schema-faker": "^0.5.0-rc13",
+    "sinon": "^4.4.4",
+    "sinon-chai": "^3.0.0",
     "vue-template-compiler": "^2.5.13"
   },
   "browserslist": [

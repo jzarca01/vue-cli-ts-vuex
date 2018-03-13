@@ -20,7 +20,7 @@ import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 @Component
 export default class Form extends Vue {
     @Prop()
-    private items: any[];
+    private items: Array<any>;
 
     @Prop()
     private model: any;

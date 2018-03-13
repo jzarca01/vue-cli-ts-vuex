@@ -26,7 +26,7 @@ const namespace: string = 'table';
 })
 export default class Table extends Vue {
     @Prop()
-    public id: number;
+    public id: string;
 
     @Mutation('addItem', { namespace }) public addItem: any;
 
@@ -59,7 +59,7 @@ export default class Table extends Vue {
     };
 
     public async submitPost() {
-        await this.addItem({ item: this.model });
+        await this.addItem({ item: "dfgdlgkdfg" });
         this.$router.push('table');
     }
 
