@@ -7,7 +7,9 @@
     "build": "vue-cli-service build",
     "test": "vue-cli-service test",
     "e2e": "vue-cli-service e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -23,10 +25,18 @@
     "vuex-persistedstate": "^2.4.2"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.15",
+    "@storybook/addon-links": "^3.3.15",
+    "@storybook/addons": "^3.3.15",
+    "@storybook/vue": "^3.3.15",
     "@types/chai": "^4.1.0",
     "@types/mocha": "^2.2.46",
     "@types/sinon": "^4.3.0",
     "@types/sinon-chai": "^2.7.29",
+    "@types/storybook__addon-actions": "^3.0.3",
+    "@types/storybook__addon-info": "^3.2.2",
+    "@types/storybook__addon-links": "^3.3.0",
+    "@types/storybook__vue": "^3.3.0",
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
     "@vue/cli-plugin-e2e-nightwatch": "^3.0.0-beta.6",
     "@vue/cli-plugin-typescript": "^3.0.0-beta.6",
@@ -34,13 +44,17 @@
     "@vue/cli-service": "^3.0.0-beta.6",
     "@vue/test-utils": "^1.0.0-beta.10",
     "axios-mock-adapter": "^1.14.1",
+    "babel-core": "^7.0.0-0",
+    "babel-preset-vue": "^2.0.1",
     "chai": "^4.1.2",
     "faker": "^4.1.0",
     "json-loader": "^0.5.7",
     "json-schema-faker": "^0.5.0-rc13",
     "sinon": "^4.4.4",
     "sinon-chai": "^3.0.0",
-    "vue-template-compiler": "^2.5.13"
+    "storybook-addon-vue-info": "^0.1.8",
+    "vue-template-compiler": "^2.5.13",
+    "webpack-merge": "^4.1.2"
   },
   "browserslist": [
     "> 1%",

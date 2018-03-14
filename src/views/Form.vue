@@ -59,7 +59,7 @@ export default class Table extends Vue {
     };
 
     public async submitPost() {
-        await this.addItem({ item: "dfgdlgkdfg" });
+        await this.addItem({ item: this.model });
         this.$router.push('table');
     }
 
