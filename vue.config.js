@@ -19,6 +19,19 @@ module.exports = {
         'Views': path.resolve(__dirname, './src/views'),
         'Store': path.resolve(__dirname, './src/store')
       }
+    },
+    module: {
+        rules: [{
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+          },
+        ],
+      }]
     }
-  }
+  },
 }

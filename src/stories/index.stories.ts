@@ -1,71 +1,45 @@
 import { storiesOf } from "@storybook/vue";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
+import { withKnobs, select, text } from '@storybook/addon-knobs/vue';
+import { withNotes } from '@storybook/addon-notes';
 import VueInfoAddon from 'storybook-addon-vue-info';
 
 import Button from 'Components/Button.vue';
-import DataTable from 'Components/DataTable.vue';
 
+import DataTable from 'Components/DataTable.vue';
+import DataTableReadme from './DataTable.md';
+
+import Form from 'Components/Form.vue';
+import FormReadme from './Form.md'
+
+const stories = storiesOf('Storybook Knobs', module);
+stories.addDecorator(withKnobs);
+
+// success|primary|info|warning|danger|plain
 storiesOf("Button", module)
   .addDecorator(VueInfoAddon)
-  .add("primary (default)", () => ({
-    components: { Button },
-    template: '<Button :onClick="action" name="buttonName" value="Button title" type="primary" />',
-    methods: { action: action("clicked") }
-  }))
-  .add("success", () => ({
-    components: { Button },
-    template: '<Button :onClick="action" name="buttonName" value="Button title" type="success" />',
-    methods: { action: action("clicked") }
-  }))
-  .add("info", () => ({
-    components: { Button },
-    template: '<Button :onClick="action" name="buttonName" value="Button title" type="info" />',
-    methods: { action: action("clicked") }
-  }))
-  .add("warning", () => ({
-    components: { Button },
-    template: '<Button :onClick="action" name="buttonName" value="Button title" type="warning" />',
-    methods: { action: action("clicked") }
-  }))
-  .add("danger", () => ({
-    components: { Button },
-    template: '<Button :onClick="action" name="buttonName" value="Button title" type="danger" />',
-    methods: { action: action("clicked") }
-  }))
-  .add("plain", () => ({
-    components: { Button },
-    template: '<Button :onClick="action" name="buttonName" value="Button title" type="plain" />',
-    methods: { action: action("clicked") }
-  }))
+  .addDecorator(withKnobs)
+  .add("default", () => {
+    const btnTitle = text('Button title', 'Click me');
+    const btnTypes = select('Type', ['primary', 'info', 'warning', 'danger', 'plain'], 'primary');
+    return {
+      components: { Button },
+      template: `<Button 
+        :onClick="action"
+        name="buttonName"
+        value="${btnTitle}"
+        type="${btnTypes}"
+      />`,
+      methods: { action: action("clicked") }
+    }
+  })
 
 storiesOf("DataTable", module)
   .addDecorator(VueInfoAddon)
-  .add("default", () => ({
+  .add("default", withNotes(DataTableReadme)(() => ({
     components: { DataTable },
-    template: `<DataTable :tableData="items" :columns="columns" />
-
-      with columns: [
-        {
-          field: "id",
-          label: "ID"
-        },
-        {
-          field: "title",
-          label: "Title"
-        }
-      ],
-
-      items: [
-        {
-          id: 1,
-          title: "Title 1"
-        },
-        {
-          id: 2,
-          title: "Title 2"
-        }
-      ]`,
+    template: `<DataTable :tableData="items" :columns="columns" />`,
     data() {
       return {
         columns: [
@@ -90,4 +64,27 @@ storiesOf("DataTable", module)
         ]
       }
     }
-  }))
+  })))
+
+storiesOf("Form", module)
+  .addDecorator(VueInfoAddon)
+  .add("default", withNotes(FormReadme)(() => ({
+    components: { Form },
+    template: `<Form :items="items" :model="model" />`,
+    data() {
+      return {
+        items: [
+          {
+            name: "id",
+          },
+          {
+            name: "title",
+          }
+        ],
+        model: {
+            id: 1,
+            title: "Title 1"
+          }
+      }
+    }
+  })))

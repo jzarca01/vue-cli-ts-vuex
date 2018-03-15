@@ -1,6 +1,7 @@
 const merge = require("webpack-merge");
 
 const genStorybookDefaultConfig = require("@storybook/vue/dist/server/config/defaults/webpack.config.js");
+// const updateWebpackConfig = require('storybook-readme/env/vue/updateWebpackConfig');
 
 const vueConfig = require("@vue/cli-service/webpack.config.js");
 
