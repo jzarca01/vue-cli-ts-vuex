@@ -19,9 +19,9 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class DataTable extends Vue {
   @Prop()
-  private tableData: any[];
+  private tableData: Array<any>;
 
   @Prop()
-  private columns: any[];
+  private columns: Array<any>;
 }
 </script>

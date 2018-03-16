@@ -1,7 +1,7 @@
 export interface TableState {
     version: number;
-    columns: any[];
-    items: any[];
+    columns: Array<any>;
+    items: Array<any>;
     toggleEdit: boolean;
     toggleLoading: boolean;
     isObsolete: boolean;
