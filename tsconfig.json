@@ -33,6 +33,12 @@
       ],
       "giphy-api": [
         "types-local/giphy-api"
+      ],
+      "@storybook/addon-knobs": [
+        "types-local/@storybook/addon-knobs"
+      ],
+      "@storybook/addon-notes": [
+        "types-local/@storybook/addon-notes"
       ]
     }
   },

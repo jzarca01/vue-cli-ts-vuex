@@ -1,0 +1,7 @@
+{
+  "dependencies": {},
+  "description": "TypeScript definitions for @storybook/addon-notes 3.3.15",
+  "name": "@types/@storybook/addon-notes",
+  "typings": "index.d.ts",
+  "version": "3.3.15"
+}

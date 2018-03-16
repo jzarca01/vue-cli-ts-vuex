@@ -1,6 +1,5 @@
 import { storiesOf } from "@storybook/vue";
 import { action } from "@storybook/addon-actions";
-import { linkTo } from "@storybook/addon-links";
 import { withKnobs, select, text } from '@storybook/addon-knobs/vue';
 import { withNotes } from '@storybook/addon-notes';
 import VueInfoAddon from 'storybook-addon-vue-info';
@@ -25,7 +24,7 @@ storiesOf("Button", module)
     const btnTypes = select('Type', ['primary', 'info', 'warning', 'danger', 'plain'], 'primary');
     return {
       components: { Button },
-      template: `<Button 
+      template: `<Button
         :onClick="action"
         name="buttonName"
         value="${btnTitle}"
