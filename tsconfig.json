@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "es2015",
     "module": "es2015",
-    "lib": [
-      "es2015",
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2015", "es2017", "dom"],
     "strict": true,
     "strictPropertyInitialization": false,
     "jsx": "preserve",
@@ -16,38 +12,17 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "types": [
-      "node",
-      "mocha",
-      "chai"
-    ],
+    "types": ["node", "mocha", "chai"],
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "vuex-persistedstate": [
-        "types-local/vuex-persistedstate"
-      ],
-      "json-schema-faker": [
-        "types-local/json-schema-faker"
-      ],
-      "giphy-api": [
-        "types-local/giphy-api"
-      ],
-      "@storybook/addon-knobs": [
-        "types-local/@storybook/addon-knobs"
-      ],
-      "@storybook/addon-notes": [
-        "types-local/@storybook/addon-notes"
-      ]
+      "@/*": ["src/*"],
+      "assets/*": ["src/assets/*"],
+      "vuex-persistedstate": ["types-local/vuex-persistedstate"],
+      "json-schema-faker": ["types-local/json-schema-faker"],
+      "giphy-api": ["types-local/giphy-api"],
+      "@storybook/addon-knobs": ["types-local/@storybook/addon-knobs"],
+      "@storybook/addon-notes": ["types-local/@storybook/addon-notes"]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.vue",
-    "tests/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.vue", "tests/**/*.ts"],
+  "exclude": ["node_modules"]
 }

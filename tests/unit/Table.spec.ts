@@ -1,21 +1,21 @@
-import Vue from 'vue';
-import chai, { expect } from 'chai';
-import sinon, { SinonStub } from 'sinon';
-import sinonChai from 'sinon-chai';
-import { mount, createLocalVue, MountOptions, Wrapper } from '@vue/test-utils';
+import Vue from "vue";
+import chai, { expect } from "chai";
+import sinon, { SinonStub } from "sinon";
+import sinonChai from "sinon-chai";
+import { mount, createLocalVue, MountOptions, Wrapper } from "@vue/test-utils";
 
-import Vuex, { Store, StoreOptions, ActionTree, MutationTree} from 'vuex';
-import { RootState } from '@/store/types.d';
+import Vuex, { Store, StoreOptions, ActionTree, MutationTree } from "vuex";
+import { RootState } from "@/store/types.d";
 
 chai.use(sinonChai);
 
-import Table from 'Views/Table.vue';
-import { TableState } from '@/store/modules/table/types';
+import Table from "Views/Table.vue";
+import { TableState } from "@/store/modules/table/types";
 
 const localVue: typeof Vue = createLocalVue();
 localVue.use(Vuex);
 
-describe('Component: Table.vue', () => {
+describe("Component: Table.vue", () => {
   let wrapper: any;
   let store: Store<any>;
   let actions: ActionTree<any, any>;
@@ -33,10 +33,10 @@ describe('Component: Table.vue', () => {
 
     actions = {
       fetchMetadata: fetchMetaStub,
-      fetchData: fetchDataStub,
+      fetchData: fetchDataStub
     };
     mutations = {
-      toggleLoading: toggleLoadingStub,
+      toggleLoading: toggleLoadingStub
     };
     store = new Vuex.Store({
       modules: {
@@ -46,38 +46,40 @@ describe('Component: Table.vue', () => {
             version: null,
             columns: [],
             items: [],
-            toggleLoading: false,
+            toggleLoading: false
           },
           getters: {
-            getState: (state) => state,
-            getMetadata: (state) => state.version,
+            getState: state => state,
+            getMetadata: state => state.version
           },
-          actions: actions,
-          mutations: mutations,
-        },
-      },
+          actions,
+          mutations
+        }
+      }
     });
     wrapper = mount(Table, {
       store,
-      localVue,
+      localVue
     });
   });
 
-  it('should render Table.vue without crashing', () => {
-    expect(wrapper.contains('div')).to.equal(true);
+  it("should render Table.vue without crashing", () => {
+    expect(wrapper.contains("div")).to.equal(true);
   });
 
-  it('should call getMetadata when mounted without version', () => {
+  it("should call getMetadata when mounted without version", () => {
+    // tslint:disable-next-line:no-unused-expression
     expect(fetchMetaStub).to.have.been.calledOnce;
   });
 
-  it('should not call getMetadata when mounted with version', () => {
+  it("should not call getMetadata when mounted with version", () => {
     fetchMetaStub.reset();
     store.replaceState({
       table: {
-        version: 1,
-      },
+        version: 1
+      }
     });
+    // tslint:disable-next-line:no-unused-expression
     expect(fetchMetaStub).not.to.have.been.called;
   });
 });

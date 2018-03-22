@@ -15,14 +15,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 @Component
 export default class Form extends Vue {
-    @Prop()
-    private items: Array<any>;
+  @Prop() private items: any[];
 
-    @Prop()
-    private model: any;
+  @Prop() private model: any;
 }
 </script>
