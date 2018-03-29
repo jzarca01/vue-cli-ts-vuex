@@ -5,4 +5,5 @@ export interface TableState {
     toggleEdit: boolean;
     toggleLoading: boolean;
     isObsolete: boolean;
+    isEmpty: boolean;
 }

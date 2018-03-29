@@ -27,12 +27,18 @@ export const actions: ActionTree<TableState, RootState> = {
         await commit(types.toggleLoading, { isLoading: true });
         // const response: any = await fetchItems('/enablon.8.7.Ref/odata/data/ho_Test/ho_Test')
         const response: any = await fetchItems('/items');
-        response.items.map((item: any) => commit(types.addItem, {
-          item,
-        }));
-        await commit(types.setMetadataVersion, {
-          version: 1,
-        });
+        if(response.items.length) {
+          await commit(types.setIsEmpty, { isEmpty: false});
+          response.items.map((item: any) => commit(types.addItem, {
+            item,
+          }));
+          await commit(types.setMetadataVersion, {
+            version: response.version,
+          });
+        }
+        else {
+          await commit(types.setIsEmpty, { isEmpty: true});
+        }
         await commit(types.toggleLoading, { isLoading: false });
       } catch (err) {
         console.error('err fetchdata', err);

@@ -6,3 +6,4 @@ export const deleteItem: string = 'deleteItem';
 export const toggleEdit: string = 'toggleEdit';
 export const toggleLoading: string = 'toggleLoading';
 export const setObsoleteMetadata: string = 'setObsoleteMetadata';
+export const setIsEmpty: string = 'setIsEmpty';

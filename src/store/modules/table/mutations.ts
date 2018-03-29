@@ -34,4 +34,8 @@ export const mutations: MutationTree<TableState> = {
       state.isObsolete = isObsolete;
       return state;
     },
+    setIsEmpty(state, { isEmpty }): TableState {
+      state.isEmpty = isEmpty;
+      return state;
+    },
   };

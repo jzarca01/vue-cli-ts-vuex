@@ -15,6 +15,7 @@ export const state: TableState = {
   toggleEdit: false,
   toggleLoading: false,
   isObsolete: false,
+  isEmpty: false
 };
 
 export const table: Module<TableState, RootState> = {

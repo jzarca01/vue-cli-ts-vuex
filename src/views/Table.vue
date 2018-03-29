@@ -1,7 +1,8 @@
 <template>
   <div class="table">
     <img src="../assets/logo.png">
-    <DataTable v-if="state.items.length" :tableData="state.items" :columns="state.columns" />
+      <el-alert v-if="state.isEmpty" title="There are no data to display" type="info"></el-alert>
+    <DataTable v-else :tableData="state.items" :columns="state.columns" />
   </div>
 </template>
 
