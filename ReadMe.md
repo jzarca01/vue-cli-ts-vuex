@@ -12,7 +12,12 @@ always-auth=true
 `vsts-npm-auth -config path\to\.npmrc`
 
 ## Adding the library to your project
-`npm i @enablon/my-package`
+`yarn add @enablon/my-package`
 
 ## To publish a private package
-if your packages name starts with `@enablon/...` it will automatically be pushed the private repo.
+If your **package name** starts with `@enablon/` like `@enablon/my-package` it will automatically be pushed the private repo.
+The **package name** is configured in `package.json`. 
+It is not the name of the current folder.
+``` bash
+yarn publish
+```
